@@ -92,6 +92,7 @@ unsigned int closest_angle = DIRECT_ANGLE;
 
 /**
  * Meri vzdalenost okolnich objektu
+ * @todo refactoring needed
  * @global closest_distance
  * @global closest_angle
  * @global actual_scanning_step
@@ -106,6 +107,7 @@ void run_scanning();
 
 /**
  * Pootoci robotem blize k neblizsimu objektu
+ * @todo refactoring needed
  * @global closest_angle
  * @global closest_distance
  * @global actual_scanning_step
