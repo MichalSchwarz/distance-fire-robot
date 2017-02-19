@@ -16,7 +16,7 @@
 #define yellow 4
 #define orange 5
 #define MAX_SPEED 200
-#define ACCELERATION 100
+#define ACCELERATION 200
 #define ROTATION_CM 16.5
 #define ROTATION_STEPS 4096
 #define TOUCH_DISTANCE_CM 10
@@ -44,6 +44,7 @@ Servo servo;
 #define S_SCANNING 1
 #define S_SET_DIRECTION 2
 #define S_MOVE 3
+#define S_MAKE_FIRE 4
 /**
  * Aktualne bezici smycka
  */
@@ -87,6 +88,9 @@ float closest_distance = UNREACHABLE_DISTANCE_CM;
 unsigned int closest_angle = DIRECT_ANGLE;
 
 #define IGNITER_PIN 11
+#define DELAY_IGNITE_OFF 300
+#define DELAY_IGNITE_ON 500
+#define SPARKS_COUNT 6
 
 // *** Smycky
 // pro PHPkare je to docela orisek. Vsude globalni promenne a uplne
@@ -120,8 +124,15 @@ void run_set_direction();
 
 /**
  * Robot je uz nasmerovan k neblizsimu objektu a dojede k nemu
+ * @global actual_step
  */
 void run_final_move();
+
+/**
+ * Zapali ohen a ukonci cinnose
+ * @global actual_step
+ */
+void run_fire();
 
 /**
  * Nastavi uhel serva danou rychlosti

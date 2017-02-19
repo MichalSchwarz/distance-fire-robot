@@ -8,14 +8,17 @@
 
 #include "main.h"
 
-void setup() {
+void setup()
+{
   init_stepper(MAX_SPEED, ACCELERATION);
   init_echo();
   servo.attach(SERVO_PIN);
   pinMode(IGNITER_PIN, OUTPUT);
+  actual_step = S_SCANNING;
 }
 
-void loop() {
+void loop()
+{
   if(actual_step == S_SCANNING)
   {
     run_scanning();
@@ -28,8 +31,24 @@ void loop() {
   {
     run_final_move();
   }
+  else if(actual_step == S_MAKE_FIRE)
+  {
+    run_fire();
+  }
   stepper.run();
   servo_run(desired_servo_angle, servo_speed);
+}
+
+void run_fire()
+{
+  for(unsigned int i = 0; i < SPARKS_COUNT; i++)
+  {
+    digitalWrite(IGNITER_PIN, HIGH);
+    delay(DELAY_IGNITE_ON);
+    digitalWrite(IGNITER_PIN, LOW);
+    delay(DELAY_IGNITE_OFF);
+  }
+  actual_step = S_DONE;
 }
 
 void run_final_move()
@@ -39,7 +58,11 @@ void run_final_move()
   {
     move_stepper_cm(distance_cm - TOUCH_DISTANCE_CM);
   }
-  actual_step = S_DONE;
+  if(!stepper.distanceToGo())
+  {
+    actual_step = S_MAKE_FIRE;
+  }
+
 }
 
 float get_steering_step(int angle, float actual_distance)
