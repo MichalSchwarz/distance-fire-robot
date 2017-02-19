@@ -1,5 +1,5 @@
 # distance-robot
-Robot finds the Closest object and get closer to it.
+Robot finds the Closest Object and get closer to it, finnaly makes a Fire.
 
 ## Goal
 1. Enjoy some fun!
@@ -10,11 +10,13 @@ Robot finds the Closest object and get closer to it.
 ## Hardware
 * Arduino UNO
 * Lego
-* Power supplies for Arduino and Engines
+* Power supplies for Arduino, Engines and Igniter
+* Old Cell Phone Charger (High Voltage Supply)
+* Transistor as a Switch for Igniter
 * Ultrasonic Distance Sensor HC-SR04
 * Servo SG90 - 9g
 * Stepper motor 28BYJ-48 + ULN2003
 * Breadboard, wires, hot glue gun etc.
 
 ## Result
-* Robot really find the closest object in the range from -90 to 90 degrees and approach to it :)
+* Robot really find the closest object in the range from -90 to 90 degrees and approach to it. Robot has successfully lit a fire and scared my wife :)
