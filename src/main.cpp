@@ -12,6 +12,7 @@ void setup() {
   init_stepper(MAX_SPEED, ACCELERATION);
   init_echo();
   servo.attach(SERVO_PIN);
+  pinMode(IGNITER_PIN, OUTPUT);
 }
 
 void loop() {
