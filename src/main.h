@@ -86,6 +86,8 @@ unsigned int actual_direction_step = S_DIRECTION_MOVING;
 float closest_distance = UNREACHABLE_DISTANCE_CM;
 unsigned int closest_angle = DIRECT_ANGLE;
 
+#define IGNITER_PIN 11
+
 // *** Smycky
 // pro PHPkare je to docela orisek. Vsude globalni promenne a uplne
 // se nedari SRP. Bude treba refactoring
