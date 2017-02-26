@@ -1,6 +1,8 @@
 # distance-robot
 Robot finds the Closest Object and get closer to it, finnaly makes a Fire.
 
+[![Arduino Robot see My Wife and Ignite the Flame of Love](https://cloud.githubusercontent.com/assets/13832444/23338042/7a78ef92-fc00-11e6-9b32-4877d070cffd.png)](https://youtu.be/ur-lkgfNIgw)
+
 ## Goal
 1. Enjoy some fun!
 2. Become familiar with the Arduino (https://www.arduino.cc/) programming in PlatformIO IDE (http://platformio.org/). It's my Hello World
